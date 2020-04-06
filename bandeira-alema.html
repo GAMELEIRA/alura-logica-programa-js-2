@@ -1,0 +1,62 @@
+<!--
+    AUTOR:GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 06/04/2020
+    HORA:19:13
+    FINALIDADE DO PROGRAMA: CONSTRUIR A BANDEIRA DA ALEMANHA USANDO A BIBLIOTECA CANVAS
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeira  Alemã</title>
+</head>
+
+<body>
+    <canvas width="600" height="400">
+
+    </canvas>
+</body>
+
+</html>
+<script>
+
+    const canvas = window.document.querySelector("canvas");
+
+    const pincel = canvas.getContext("2d");
+
+    pincel.fillStyle = "black";
+
+    pincel.fillRect(0, 0, 600, 133.33);
+
+    pincel.fillStyle = "red";
+
+    pincel.fillRect(0, 133.33, 600, 133.33);
+
+    pincel.fillStyle = "yellow";
+
+    pincel.fillRect(0, 266.66, 600, 133.33);
+
+    pincel.fillStyle = "pink";
+
+    pincel.beginPath();
+
+    pincel.moveTo(300, 200);
+
+    pincel.lineTo(200, 400);
+
+    pincel.lineTo(400, 400);
+
+    pincel.fill();
+
+    pincel.fillStyle = "blue";
+
+    pincel.beginPath();
+
+    pincel.arc(300, 200, 50, 0, 2 * 3.14);
+
+    pincel.fill();
+
+</script>
