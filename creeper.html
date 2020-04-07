@@ -1,0 +1,99 @@
+<!--
+    AUTOR:GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 06/04/2020
+    HORA:20:34
+    FINALIDADE DO PROGRAMA: CONSTRUIR O CREEPER
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creeper</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+
+</html>
+<script>
+
+    let canvas;
+
+    let pincel;
+
+    function constroiAmbiente() {
+
+        canvas = window.document.querySelector("canvas");
+
+        pincel = canvas.getContext("2d");
+
+    }
+
+    function constroiCabecaCreeper() {
+
+        pincel.fillStyle = "green";
+
+        pincel.fillRect(0, 0, 350, 350);
+
+    }
+
+    function constroiOlhoEsquerdoCreeper() {
+
+        pincel.fillStyle = "black";
+
+        pincel.fillRect(50, 50, 100, 100);
+
+    }
+
+    function constroiOlhoDireitoCreeper() {
+
+        pincel.fillStyle = "black";
+
+        pincel.fillRect(200, 50, 100, 100);
+
+    }
+
+    function constroiNarizCreeper() {
+
+        pincel.fillStyle = "black";
+
+        pincel.fillRect(150, 150, 50, 100);
+
+    }
+
+    function constroiBocaEsquerdaCreeper() {
+
+        pincel.fillStyle = "black";
+
+        pincel.fillRect(100, 200, 50, 150);
+
+    }
+
+
+    function constroiBocaDireitaCreeper() {
+
+        pincel.fillStyle = "black";
+
+        pincel.fillRect(200, 200, 50, 150);
+    }
+
+
+    constroiAmbiente();
+
+    constroiCabecaCreeper();
+
+    constroiOlhoEsquerdoCreeper();
+
+    constroiOlhoDireitoCreeper();
+
+    constroiNarizCreeper();
+
+    constroiBocaEsquerdaCreeper();
+
+    constroiBocaDireitaCreeper();
+
+</script>
