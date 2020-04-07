@@ -1,0 +1,78 @@
+<!--
+    AUTOR:GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 06/04/2020
+    HORA:21:37
+    FINALIDADE DO PROGRAMA: CONSTRUIR UM ESQUADRO
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquadro</title>
+</head>
+
+<body>
+
+    <canvas width="600" height="400">
+
+    </canvas>
+
+</body>
+
+</html>
+<script>
+
+    let canvas;
+
+    let pincel;
+
+    function constroiAmbiente() {
+
+        canvas = window.document.querySelector("canvas");
+
+        pincel = canvas.getContext("2d");
+
+    }
+
+    function constroiTrianguloPreto() {
+
+        pincel.fillStyle = "black";
+
+        pincel.beginPath();
+
+        pincel.moveTo(50, 50);
+
+        pincel.lineTo(50, 400);
+
+        pincel.lineTo(400, 400);
+
+        pincel.fill();
+
+    }
+
+    function constroiTrianguloBranco() {
+
+        pincel.fillStyle = "white";
+
+        pincel.beginPath();
+
+        pincel.moveTo(100, 175);
+
+        pincel.lineTo(100, 350);
+
+        pincel.lineTo(274, 350);
+
+        pincel.fill();
+
+    }
+
+    constroiAmbiente();
+
+    constroiTrianguloPreto();
+
+    constroiTrianguloBranco();
+
+</script>
