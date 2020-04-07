@@ -1,0 +1,52 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS 
+    DATA: 07/04/2020
+    HORA: 02:59
+    FINALIDADE DO PROGRAMA: DESENHAR REPRESEMTACOES DE FRANCOES
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fracoes</title>
+</head>
+
+<body>
+
+    <canvas width="600" height="400"></canvas>
+
+</body>
+
+</html>
+<script>
+
+    let canvas;
+
+    let pincel;
+
+    function criarAmbiente() {
+
+        canvas = document.querySelector("canvas");
+
+        pincel = canvas.getContext("2d");
+
+    }
+
+    function desenharQuadrado(x, y, tamanho, cor, cor_borda) {
+
+        pincel.fillStyle = cor;
+
+        pincel.strokeSyle = cor_borda;
+
+        pincel.fillRect(x, y, tamanho, tamanho);
+
+    }
+
+    criarAmbiente();
+
+    desenharQuadrado(50, 50, 100, "orange", "blue");
+
+</script>

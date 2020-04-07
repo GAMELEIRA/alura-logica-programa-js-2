@@ -1,0 +1,109 @@
+<!--
+    AUTOR:GABRIEL GAMELEIRA DOS SANTOS
+    DATA:07/04/2020
+    HORA:09:25
+    FINALIDADE DO PROGRAMA: EXIBIR UM GRAFICO DE UTLIZACAO DE NAVEGADORES
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafico navegadores</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+
+</html>
+<script>
+
+    let canvas;
+
+    let pincel;
+
+    const serie_2015 = [50, 25, 20, 5];
+
+    const serie_2016 = [65, 20, 13, 2];
+
+    const cores = ["blue", "green", "yellow", "red"];
+
+    function constroiAmbiente() {
+
+        canvas = window.document.querySelector("canvas");
+
+        pincel = canvas.getContext("2d");
+
+    }
+
+    function constroiTitulo(texto, x, y) {
+
+        pincel.font = '15px Georgia';
+
+        pincel.fillStyle = 'black';
+
+        pincel.fillText(texto, x, y);
+
+    }
+
+    function constroiCor(cor) {
+
+        pincel.fillStyle = cor;
+
+    }
+
+    function constroiBlocos(x, y, tamanho) {
+
+        pincel.fillRect(x, y, 50, tamanho);
+
+        pincel.strokeStile = "black";
+
+        pincel.strokeRect(x, y, 50, tamanho);
+
+    }
+
+    function percorreSerie2015() {
+
+        let valorGrafico = 0;
+
+        for (let i = 0; i < serie_2015.length; i++) {
+
+            constroiCor(cores[i]);
+
+            constroiBlocos(0, valorGrafico, serie_2015[i]);
+
+            valorGrafico += serie_2015[i];
+
+        }
+
+        constroiTitulo("2015", 0, 110);
+
+    }
+
+    function percorreSerie2016() {
+
+        let valorGrafico = 0;
+
+        for (let i = 0; i < serie_2016.length; i++) {
+
+            constroiCor(cores[i]);
+
+            constroiBlocos(60, valorGrafico, serie_2016[i]);
+
+            valorGrafico += serie_2016[i];
+
+        }
+        
+        constroiTitulo("2016", 60, 110);
+
+    }
+
+    constroiAmbiente();
+
+    percorreSerie2015();
+
+    percorreSerie2016();
+
+</script>
