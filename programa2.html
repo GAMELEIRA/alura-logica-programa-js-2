@@ -1,0 +1,60 @@
+<!--
+    AUTOR:GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 06/04/2020
+    HORA:21:37
+    FINALIDADE DO PROGRAMA: CONSTRUIR  A BANDEIRA BRASILEIRA 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 2</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+</body>
+
+</html>
+<script>
+
+    function desenhaQuadrado(x, y, cor) {
+
+        const tela = document.querySelector("canvas");
+
+        const pincel = tela.getContext("2d");
+
+        pincel.fillStyle = cor;
+
+        pincel.strokeStyle = "blue";
+
+        pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeRect(x, y, 50, 50);
+
+        pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeRect(x, y, 50, 50);
+
+        pincel.strokeRect(x, y, 50, 50);
+
+        pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeRect(x, y, 50, 50);
+
+    }
+
+    let x = 0;
+
+    while (x < 600) {
+
+        desenhaQuadrado(x, 0, "red");
+
+        x += 50;
+    }
+
+
+</script>
