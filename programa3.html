@@ -30,6 +30,10 @@
 
     let pincel;
 
+    let raio = 10;
+
+    let decremento = 5;
+
     function criarAmbiente() {
 
         canvas = document.querySelector("canvas");
@@ -48,17 +52,23 @@
 
         let y = evento.pageY - canvas.offsetTop;
 
-        desenharBolinha(x, y);
+        raio += (evento.shiftKey) ? 10 : 0;
+
+        (evento.altKey) ? raio -= 5 : 0;
+
+        raio = (raio > 40) ? 40 : raio;
+
+        desenharBolinha(x, y, raio);
 
     }
 
-    function desenharBolinha(x, y) {
+    function desenharBolinha(x, y, raio) {
 
         pincel.fillStyle = (pincel.fillStyle == "#ffa500") ? cores[0] : console.log(pincel.fillStyle);
 
         pincel.beginPath();
 
-        pincel.arc(x, y, 50, 0, 2 * 3.14);
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
 
         pincel.fill();
 
