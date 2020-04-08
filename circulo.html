@@ -1,0 +1,78 @@
+<!--
+    AUTOR:GABRIEL GAMELEIRA DOS SANTOS
+    DATA:08/04/2020
+    HORA:06:55
+    FINALIDADE DO PROGRAMA: EXIBIR UM GRAFICO DE UTLIZACAO DE NAVEGADORES
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+
+</html>
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    let x;
+
+    let y;
+
+    let estado = false;
+
+    function habilitarDesenho() {
+
+        estado = true;
+
+    }
+
+    function desabilitarDesenho() {
+
+        estado = false;
+
+    }
+
+    function capturaCoordenada(evento) {
+
+        x = evento.pageX - tela.offsetLeft;
+        y = evento.pageY - tela.offsetTop;
+
+        if (estado) {
+
+            desenhaCirculo(evento);
+
+        }
+    }
+
+    function desenhaCirculo(evento) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+        console.log(x + ',' + y);
+
+    }
+
+    tela.onmousedown = habilitarDesenho;
+
+    tela.onmouseup = desabilitarDesenho;
+
+    tela.onmousemove = capturaCoordenada;
+
+
+
+</script>
