@@ -16,15 +16,21 @@
 
 <body>
     <canvas width="600" height="400"></canvas>
+    <br>
+    Escolha uma cor <input type="color">
 </body>
 
 </html>
 <script>
 
+    let corLinha;
+
     var tela = document.querySelector('canvas');
+
     var pincel = tela.getContext('2d');
 
     pincel.fillStyle = 'grey';
+
     pincel.fillRect(0, 0, 600, 400);
 
     let x;
@@ -59,7 +65,8 @@
 
     function desenhaCirculo(evento) {
 
-        pincel.fillStyle = 'blue';
+        corLinha = document.querySelector("input").value;
+        pincel.fillStyle = corLinha;
         pincel.beginPath();
         pincel.arc(x, y, 10, 0, 2 * 3.14);
         pincel.fill();
